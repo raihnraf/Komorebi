@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+/* 
+ * Sakura & Matcha Design System
+ * Neo-brutalist Japanese Learning Platform
+ */
+
+/* Custom Theme Configuration for Tailwind CSS v4 */
+@theme {
+  /* Colors - Primary (Matcha Green) */
+  --color-primary: #145129;
+  --color-primary-container: #2F6A3F;
+  --color-primary-fixed: #B2F2BB;
+  --color-primary-fixed-dim: #96D5A0;
+  --color-on-primary: #FFFFFF;
+  --color-on-primary-container: #A8E8B2;
+  --color-on-primary-fixed: #00210B;
+  --color-on-primary-fixed-variant: #135129;
+
+  /* Colors - Secondary (Sakura Pink) */
+  --color-secondary: #78555E;
+  --color-secondary-container: #FFD1DC;
+  --color-secondary-fixed: #FFD9E2;
+  --color-secondary-fixed-dim: #E7BBC6;
+  --color-on-secondary: #FFFFFF;
+  --color-on-secondary-container: #7A5761;
+  --color-on-secondary-fixed: #2D141C;
+  --color-on-secondary-fixed-variant: #5E3E47;
+
+  /* Colors - Tertiary (Purple) */
+  --color-tertiary: #533F60;
+  --color-tertiary-container: #6B5779;
+  --color-tertiary-fixed: #F3DAFF;
+  --color-tertiary-fixed-dim: #D7BDE5;
+  --color-on-tertiary: #FFFFFF;
+  --color-on-tertiary-container: #EAD0F8;
+  --color-on-tertiary-fixed: #251432;
+  --color-on-tertiary-fixed-variant: #533F60;
+
+  /* Colors - Surface */
+  --color-surface: #F9F9F9;
+  --color-surface-dim: #DADADA;
+  --color-surface-bright: #F9F9F9;
+  --color-surface-container: #EEEEEE;
+  --color-surface-container-low: #F3F3F3;
+  --color-surface-container-lowest: #FFFFFF;
+  --color-surface-container-high: #E8E8E8;
+  --color-surface-container-highest: #E2E2E2;
+  --color-surface-on-surface: #1A1C1C;
+  --color-surface-on-surface-variant: #414940;
+  --color-surface-variant: #E2E2E2;
+
+  /* Colors - Background */
+  --color-background: #F9F9F9;
+  --color-on-background: #1A1C1C;
+
+  /* Colors - Outline */
+  --color-outline: #717970;
+  --color-outline-variant: #C0C9BE;
+
+  /* Colors - Error */
+  --color-error: #BA1A1A;
+  --color-error-container: #FFDAD6;
+  --color-on-error: #FFFFFF;
+  --color-on-error-container: #93000A;
+
+  /* Colors - Inverse */
+  --color-inverse-surface: #2F3131;
+  --color-inverse-on-surface: #F0F1F1;
+  --color-inverse-primary: #96D5A0;
+
+  /* Colors - Surface Tint */
+  --color-surface-tint: #2F6A3F;
+
+  /* Colors - JLPT Levels */
+  --color-jlpt-n5: #87CEEB;
+  --color-jlpt-n4: #FDFD96;
+  --color-jlpt-n3: #B2F2BB;
+  --color-jlpt-n2: #FFD1DC;
+  --color-jlpt-n1: #CDB4DB;
+
+  /* Fonts */
+  --font-headline: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-label: "Plus Jakarta Sans", sans-serif;
+  --font-japanese: "Noto Sans JP", sans-serif;
+
+  /* Border Radius */
+  --radius-default: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+
+  /* Shadows - Neo-brutalist */
+  --shadow-hard: 4px 4px 0px 0px rgba(26, 26, 26, 1);
+  --shadow-hard-sm: 2px 2px 0px 0px rgba(26, 26, 26, 1);
+  --shadow-hard-lg: 8px 8px 0px 0px rgba(26, 26, 26, 1);
+  --shadow-nav: 0px -4px 0px 0px rgba(26, 26, 26, 1);
+}
+
+/* 
+ * Custom utility classes 
+ */
+@layer utilities {
+  .hard-shadow {
+    box-shadow: var(--shadow-hard);
+  }
+
+  .hard-shadow-sm {
+    box-shadow: var(--shadow-hard-sm);
+  }
+
+  .hard-shadow-lg {
+    box-shadow: var(--shadow-hard-lg);
+  }
+
+  .active-press:active {
+    transform: translate(2px, 2px);
+    box-shadow: var(--shadow-hard-sm);
+  }
+}
+
+/* Base styles */
+@layer base {
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-surface);
+    color: var(--color-surface-on-surface);
+  }
+}

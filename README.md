@@ -13,6 +13,8 @@ A high-performance portfolio project built with React, Vite, and Tailwind CSS. F
 - **Animations:** Motion (formerly Framer Motion)
 - **Icons:** Lucide React
 - **Routing:** React Router v7
+- **Architecture:** 🆕 Service Layer + Clean Code principles
+- **Error Handling:** 🆕 Error Boundaries + Custom Error Classes
 - **Deployment:** Vercel-ready
 
 ## 📁 Project Structure
@@ -23,7 +25,8 @@ sakura-matcha/
 │   ├── components/
 │   │   ├── ui/              # Base UI components (Button, Card, Badge)
 │   │   ├── layout/          # Layout components (TopBar, BottomNav)
-│   │   └── shared/          # Shared components
+│   │   ├── shared/          # Shared components
+│   │   └── ErrorBoundary.tsx # Global error boundary
 │   ├── features/
 │   │   ├── kanji-explorer/  # Kanji learning feature
 │   │   │   ├── components/
@@ -35,15 +38,28 @@ sakura-matcha/
 │   │   └── review/          # Review system
 │   ├── pages/               # Page components
 │   ├── store/               # Zustand stores
+│   ├── services/            # 🆕 Service Layer (API, Error Handling)
+│   │   ├── api/             # API services & React Query hooks
+│   │   └── errors/          # Error classes & handler
+│   ├── config/              # 🆕 Configuration (constants, endpoints, routes)
 │   ├── lib/                 # Utilities and config
 │   ├── types/               # TypeScript types
 │   └── data/                # Mock data
 ├── public/
+├── .env.example             # 🆕 Environment variables template
+├── ARCHITECTURE.md          # 🆕 Service layer & error handling docs
 ├── index.html
 └── package.json
 ```
 
 ## 🎯 Features
+
+### Architecture (NEW!)
+- ✅ **Service Layer** - Clean API abstraction with HTTP client
+- ✅ **Error Handling** - Comprehensive error management with boundaries
+- ✅ **Configuration System** - Centralized config & environment variables
+- ✅ **Type Safety** - Full TypeScript coverage
+- ✅ **React Query Integration** - Optimized data fetching & caching
 
 ### Implemented
 - ✅ Home/Dashboard with bento grid layout
@@ -143,6 +159,31 @@ Neo-brutalist hard shadows:
 - `useKanjiDetail` - Fetch single kanji
 - `useKanjiSearch` - Search kanji
 - `useRandomKanji` - Word of the day
+
+### Service Layer & Error Handling
+
+The app implements a clean service layer architecture:
+
+```typescript
+// API calls through service layer
+import { kanjiService } from "@/services/api";
+const kanji = await kanjiService.getById("123");
+
+// React Query hooks
+import { useKanji } from "@/services/api/queries";
+const { data } = useKanji("123");
+
+// Error handling
+import { handleError, getUserErrorMessage } from "@/services/errors";
+try {
+  // ...
+} catch (error) {
+  handleError(error);
+  const message = getUserErrorMessage(error);
+}
+```
+
+📖 **See [ARCHITECTURE.md](./ARCHITECTURE.md)** for detailed documentation.
 
 ## 🚀 Deployment
 

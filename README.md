@@ -8,7 +8,7 @@ A modern, high-performance Japanese learning application featuring kanji explora
 [![Built with React](https://img.shields.io/badge/Built%20with-React-61dafb.svg)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178c6.svg)](https://www.typescriptlang.org/)
 
-🔗 **[Live Demo](https://komorebi.vercel.app/)**
+🔗 **[Live Demo](https://komorebi--raihanwest.replit.app/)**
 
 ---
 
